@@ -2,7 +2,11 @@
 /**
  * main - Entry point
  * puts - Enters the string
- * puts - x4
+ * puts -
+ * puts - 
+ * puts -
+ * puts -
+ * puts -
  * Return: The Beautiful Bytes
  */
 int	main(void)
