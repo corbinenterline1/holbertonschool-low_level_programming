@@ -1,9 +1,11 @@
 #include<stdio.h>
 /**
  * main - Entry point
- * @char displays char 
- * 
- * 
+ * @char displays char byte value
+ * @int displays int byte value
+ * @long int displays double byte value
+ * @long long int displays double byte value
+ * @float displays float byte value
  */
 int	main(void)
 {
