@@ -2,22 +2,22 @@
 /**
  * main - Entry point
  * ch = character
- * for puts a, through z, in increments
- * putchar puts the character string
+ * while ch is less than or equal to z:
+ * putchar continues the character string
+ * if statement nested in while
+ * skips 1 character (++ch) if ch == e or o
  * 2nd putchar puts the newline
- * Return: the lowercase alphabet
+ * Return: the lowercase alphabet minus e or p
  */
 int main(void)
 	{
 	char ch = 'a';
 
-	for (ch = 'a'; ch <= 'z'; ch++)
+	while (ch <= 'z')
 	{
-	if (ch == 'f' || ch == 'p')
-	{
-	putchar('\b');
-	}
-	putchar(ch);
+	putchar(ch++);
+	if (ch == 'e' || ch == 'o')
+	++ch;
 	}
 	putchar('\n');
 	return (0);
