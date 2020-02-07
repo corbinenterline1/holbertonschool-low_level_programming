@@ -2,7 +2,7 @@
 /**
  * main - Entry point
  * ch = character
- * for puts a, through z, in increments
+ * for puts 0, through 9, in increments
  * putchar puts the character string
  * 2nd putchar puts the newline
  * Return: the lowercase alphabet
