@@ -11,17 +11,15 @@
  */
 int main(void)
 	{
-	int a = '0';
+	int i = '0';
 
-	for (a = '0'; a <= '9'; a++)
+	while (i < '9')
 	{
-	putchar(a);
+	putchar(i++);
 	putchar(',');
 	putchar(' ');
-	}
-	if (a == '9')
-	{
-	putchar('\b');
+	if (i == '9')
+	putchar(i);
 	}
 	return (0);
 }
