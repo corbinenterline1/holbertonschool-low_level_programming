@@ -10,8 +10,8 @@
 int _abs(int a)
 	{
 	if (a >= 0)
-	_putchar(a);
+	return(a);
 
 	else
-	_putchar(a - (a * 2));
+	return(a - (a * 2));
 }
