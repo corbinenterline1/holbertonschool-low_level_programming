@@ -1,11 +1,10 @@
 #include "holberton.h"
 /**
- * print_last_digit - print last digit
- * @d: value
- * If n is greater than 0, putchar a + '0'..
- * If n is less than 0, get its absolute number
- * absolute is calculated by multiplying number by 2, then subtracting itself
- * Return: prints value of last digits
+ * add - adds the two numbers
+ * @d: integer
+ * @n: integer
+ * add n + d
+ * Return: Total of n + d
  */
 int add(int n, int d)
 	{
