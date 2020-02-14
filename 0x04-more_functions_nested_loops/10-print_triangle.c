@@ -1,37 +1,43 @@
 #include "holberton.h"
 
 /**
- * print_diagonal - c
- * @n: is the diagonal line count from main function
- * First for loop is rows
- * if n, or a consequently, is 0 or less, newline
- * otherwise, for loop setting number of spaces
- * finish first for loop with the diagonal line & newline
- * Result: diagonal lines, dictated in length by n
+ * print_triangle - prints christmas trees
+ * @size: input integer from main function
+ * if size is less than or equal to 0, new line
+ * while size is less than zero, set s to 1 less than size
+ * nested while loop for when s is greater than 0
+ * add space, then subract 1 from s
+ * then, set t to 0; then nested while loop for when t does not equal d
+ * add hashtag, and increase t, then newline, increase d, decrease size
+ * Result: Trees
  */
 void print_triangle(int size)
 {
-	int a;
-	int b;
-	int c;
+	int s;
+	int t;
+	int d;
 
+	d = 1;
 	if (size <= 0)
 	{
 		_putchar('\n');
 	}
-	else
+	while (size > 0)
 	{
-		for (a = 1; a <= size; a++)
+		s = size - 1;
+		while (s > 0)
 		{
-			for (c = 0; c <= size; c++)
-			{
-				for (b = (size - 1); b > 0; b--)
-					{
-					_putchar(' ');
-					}
-				_putchar('#');
-			}
-		_putchar('\n');
+			_putchar(' ');
+			s--;
 		}
+		t = 0;
+		while (t != d)
+		{
+			_putchar('#');
+			t++;
+		}
+		_putchar('\n');
+		d++;
+		size--;
 	}
 }
