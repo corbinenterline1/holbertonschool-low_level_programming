@@ -18,18 +18,16 @@ int _strlen(char *s)
 	return (l);
 }
 /**
- * rev_string - Reverses input string
+ * rev_string - Function reversing string using pointers
  * @s: input string
- * t is temp, holds value while we switch
- * i is counter
- * l is length - 1 (can't figure out why reverse doesn't work without it)
- * for i is zero, i gotta stay less than length divided by 2
- * because you don't want to swap both halves of string twice, it'd be normal
- * each iteration, set t to string value at i
- * then set string spot it to string spot l
- * then set string spot l to t, ole switcheroo
- * decrement l(ength) by 1
- * Result: string in reverse
+ * first, get length of string
+ * set b(eginning) and e(nd) initially to start of string
+ * first for loop moves e to the last character
+ * 2nd for loop swaps the char from start and end index
+ * using b(eginning) and e(nd)
+ * swap characters c & *e, *e with *b, then *b with c
+ * then update pointers positions
+ * Result: reversed string!
  */
 void rev_string(char *s)
 {
