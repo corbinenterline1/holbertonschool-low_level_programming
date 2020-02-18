@@ -33,15 +33,25 @@ int _strlen(char *s)
  */
 void rev_string(char *s)
 {
-	char t;
+	char *b;
+	char *e;
+	char c;
 	int i;
-	int l = _strlen(s) - 1;
+	int l;
 
+	l = _strlen(s);
+	b = s;
+	e = s;
+	for (i = 0; i < l - 1; i++)
+	{
+		e++;
+	}
 	for (i = 0; i < l / 2; i++)
 	{
-		t = s[i];
-		s[i] = s[l];
-		s[l] = t;
-		l--;
+		c = *e;
+		*e = *b;
+		*b = c;
+		b++;
+		e--;
 	}
 }
