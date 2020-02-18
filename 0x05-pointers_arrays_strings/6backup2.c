@@ -28,12 +28,13 @@ int _strlen(char *s)
  */
 void puts2(char *str)
 {
-	int i = 0;
+	int i;
+	int l;
 
-	while (i < _strlen(str))
+	l = _strlen(str);
+	for (i = 0; i < l - 1; i += 2)
 	{
 		_putchar(str[i]);
-		i += 2;
 	}
 	_putchar('\n');
 }
