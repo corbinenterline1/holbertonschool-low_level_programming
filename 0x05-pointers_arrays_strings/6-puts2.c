@@ -1,19 +1,40 @@
 #include "holberton.h"
-
 /**
- * puts2 - Prints every other character of string
+ * _strlen - gets length of string
+ * @s: input string
+ * Increments string & l(ength) while s doesn't equal 0(line break)
+ * Return: length of string
+ */
+int _strlen(char *s)
+{
+	int l = 0;
+
+	while (*s != 0)
+	{
+		s++;
+		l++;
+	}
+	return (l);
+}
+/**
+ * puts2 - Prints every other line of string
  * @str:  Input string
- * While the string does not equal endline
- * Print string, then advance string 2
+ * i is counter integer
+ * l is length of string
+ * while counter is less than length minus 1 (account for line break)
+ * putchar of string at i, then advance i twice
  * After loop, finish with newline
- * Result: The string printed!
+ * Result: The string kinda printed!
  */
 void puts2(char *str)
 {
-	while (*str != 0)
+	int i;
+	int l = _strlen(str);
+
+	while (i < l - 1)
 	{
-		_putchar(*str);
-		str += 2;
+		_putchar(str[i]);
+		i += 2;
 	}
-	_putchar('\n');
+	_putchar ('\n');
 }
