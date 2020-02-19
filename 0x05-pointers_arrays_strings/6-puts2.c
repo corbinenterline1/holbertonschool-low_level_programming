@@ -20,11 +20,11 @@ int _strlen(char *s)
  * puts2 - Prints every other line of string
  * @str:  Input string
  * i is counter integer
- * l is length of string
- * while counter is less than length minus 1 (account for line break)
- * putchar of string at i, then advance i twice
- * After loop, finish with newline
- * Result: The string kinda printed!
+ * set i to 0
+ * while i is less than the string length of str
+ * putchar str at i spot; increment i 2
+ * Then newline after loop is complete
+ * Result: Prints every other line!
  */
 void puts2(char *str)
 {
