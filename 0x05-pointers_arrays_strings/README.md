@@ -1,7 +1,7 @@
  # 0x05 - C - Pointers, arrays and strings
 Task # | Description
 -------|------------
-[Task 0](0x05-pointers_arrays_strings/0-reset_to_98.c) | Takes a pointer to an int as parameter & updates value it points to to 98 
+[Task 0](0-reset_to_98.c) | Takes a pointer to an int as parameter & updates value it points to to 98 
 [Task 1](0x05-pointers_arrays_strings/1-swap.c) | Swaps values of two integers
 [Task 2](0x05-pointers_arrays_strings/2-test.c) | Returns length of string
 [Task 3](0x05-pointers_arrays_strings/3-puts.c) | Prints a string
