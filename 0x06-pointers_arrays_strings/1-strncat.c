@@ -1,40 +1,26 @@
 #include "holberton.h"
 
 /**
- * _strlen - gets length of string
- * @s: input string
- * Increments string & l(ength) while s doesn't equal 0(line break)
- * Return: length of string
- */
-int _strlen(char *s)
-{
-	int l = 0;
-
-	while (*s != 0)
-	{
-		s++;
-		l++;
-	}
-	return (l);
-}
-/**
- * _strncat - copies string src onto end of dest by n bytes
+ * _strncat - Concanates string src to end of dest by n number of bytes
  * @dest: destination string
  * @src: source string that is put at end of dest string
- * set a char pointer (ptr) to end of dest with strlen
- * while source isn't null byte, and n isn't zero
- * put src byte where ptr is, then advance both, and decrease n
- * this ensures you don't put too many bytes
+ * @n: number of bytes to copy
+ * first for loop sets int a to end of destination string
+ * second for loop sets b to 0, then adds source to destination
+ * at spot where a + b (this means a is end of dest, while b starts at 0
+ * and increments). Go until either n is 0, or source is at null byte.
+ * Return: destination with appended string of n bytes
  */
 char *_strncat(char *dest, char *src, int n)
 {
-	char *ptr = dest + _strlen(dest);
+	int a;
+	int b;
 
-	while (*src != '\0' && n != 0)
+	for (a = 0; dest[a] != '\0'; a++)
+	;
+	for (b = 0; src[b] != '\0' && n != 0; b++, n--)
 	{
-		*ptr++ = *src++;
-		--n;
+		dest[a + b] = src[b];
 	}
-	*ptr = '\0';
 	return (dest);
 }
