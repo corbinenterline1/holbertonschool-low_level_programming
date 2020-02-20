@@ -5,9 +5,10 @@
  * @dest: destination string
  * @src: source string that is put at end of dest string
  * @n: number of bytes to copy
- * second for loop sets b to 0, then makes destination at spot b equal
- * source at spot b, then repeat until src at b destination is at a
- * null-terminator byte, or n is 0
+ * first for loop sets a to 0, then sets dest at 'a' element,
+ * the same to src at 'a' element, then increment 'a'
+ * until src[a] is at terminator, or 'a' is equal to n
+ * 2nd for loop ensures proper amount of terminators are input
  * Return: copied string at dest, to n number of bytes
  */
 char *_strncpy(char *dest, char *src, int n)
