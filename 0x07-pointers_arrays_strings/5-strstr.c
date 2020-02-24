@@ -16,16 +16,18 @@
 char *_strstr(char *haystack, char *needle)
 {
 	char *a;
+	char *b;
 
 	while (*haystack != '\0')
 	{
 		a = haystack;
-		while (*haystack && *needle && *haystack == *needle)
+		b = needle;
+		while (*haystack && *b && *haystack == *b)
 		{
 			haystack++;
-			needle++;
+			b++;
 		}
-		if (*needle == '\0')
+		if (*b == '\0')
 			return (a);
 		haystack = a + 1;
 	}
