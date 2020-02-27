@@ -24,4 +24,6 @@ int primer(int a, int b);
 
 int palipal(char *s, int b, int e);
 
+int wildcmp(char *s1, char *s2);
+
 #endif
