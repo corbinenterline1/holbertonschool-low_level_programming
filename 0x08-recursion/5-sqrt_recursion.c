@@ -1,23 +1,28 @@
 #include "holberton.h"
 
 /**
- * sqrter - takes square root of  *Return: square root
+ * sqrter - function to check properly for natural square roots
+ * @a: counter number to compare to base
+ * @b: base number to be compared
+ * if a * a = b, return n
+ * if a * a is greater than b, return
+ *Return: square root of base
  */
-int sqrter(int n, int o)
+int sqrter(int a, int b)
 {
-	if (n * n == o)
-		return (n);
-	if (n * n > o)
+	if (a * a == b)
+		return (a);
+	if (a * a > b)
 		return (-1);
 	else
-		return (sqrter(n + 1, o));
+		return (sqrter(++a, b));
 }
 /**
- *
- *
- *
+ * _sqrt_recursion - returns natural square root
+ * @n: input number
+ * Return: natural square root of n
  */
 int _sqrt_recursion(int n)
 {
-	return (sqrter(1, n));
+	return (sqrter(0, n));
 }
