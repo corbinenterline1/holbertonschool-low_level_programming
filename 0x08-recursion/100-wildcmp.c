@@ -1,12 +1,9 @@
 #include "holberton.h"
 
 /**
- * is_palindrome - function that checks if input string is a palindrome
- * @s: input char string
- * set variable l to the length of the string
- * if l is 0, return 1 (empty string is a palindrome)
- * else, return result of palipal function, with beginning int 'b'
- * set to 0, and ending int 'e' to length minus 1 (to account for terminator)
+ * wildcmp - compares strings to see if identical
+ * @s1: first string
+ * @s2: second string
  * Return: 1 if palindrome, 0 if not
  */
 int wildcmp(char *s1, char *s2)
