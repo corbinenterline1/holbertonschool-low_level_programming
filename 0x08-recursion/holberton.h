@@ -18,4 +18,10 @@ int _sqrt_recursion(int n);
 
 int is_prime_number(int n);
 
+int is_palindrome(char *s);
+
+int primer(int a, int b);
+
+int palipal(char *s, int b, int e);
+
 #endif
