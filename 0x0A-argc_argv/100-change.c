@@ -1,7 +1,6 @@
 #include "holberton.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
 
 /**
  * main - Main function to determining minimum number of coins to reach amount
@@ -38,7 +37,7 @@ int main(int argc, char *argv[])
 				b -= 5;
 			for (; b >= 2; c++)
 				b -= 2;
-			for (; b > 0; c++)
+			for (; b > 1; c++)
 				b -= 1;
 			printf("%d\n", c);
 			return (0);
