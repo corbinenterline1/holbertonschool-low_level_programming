@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
-		b = atoi(argv[1]);
+		b += atoi(argv[1]);
 		if (b > 0)
 		{
 			for (; b >= 25; c++)
@@ -35,10 +35,11 @@ int main(int argc, char *argv[])
 				b -= 10;
 			for (; b >= 5; c++)
 				b -= 5;
-			for (; b >= 2; c++)
-				b -= 2;
-			for (; b > 0; c++)
+			if (b % 2 != 0)
 				b -= 1;
+				c++;
+			for (; b > 0; c++)
+				b -= 2;
 			printf("%d\n", c);
 			return (0);
 		}
