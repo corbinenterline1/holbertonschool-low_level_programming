@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 			printf("%d\n", c);
 			return (0);
 		}
-		else if (b < 0)
+		else if (b <= 0)
 		{
 			printf("0\n");
 			return (0);
