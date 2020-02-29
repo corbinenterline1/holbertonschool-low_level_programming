@@ -1,4 +1,4 @@
-#include "holberton.h"
+[2;2Rude "holberton.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
@@ -38,8 +38,7 @@ int main(int argc, char *argv[])
 				b -= 5;
 			for (; b >= 2; c++)
 				b -= 2;
-			for (; b > 0;)
-				c++;
+			for (; b != 0; c++)
 				b -= 1;
 			printf("%d\n", c);
 			return (0);
