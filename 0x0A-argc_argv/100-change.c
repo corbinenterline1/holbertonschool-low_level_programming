@@ -1,4 +1,4 @@
-[2;2Rude "holberton.h"
+#include "holberton.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
