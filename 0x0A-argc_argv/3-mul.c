@@ -5,15 +5,12 @@
  * main - multiplies 2 arguments to main and prints result
  * @argc: Argument count
  * @argv: Argument vector
- * As long as argc is 3, atoi arguments 1 & 2 held in n1 & n2 respectively
- * Then multiply the two, and store result in 'r'
+ * As long as argc is 3,atoi argv[1] times atoi argv[2]
  * Print r, followed by newline
  * Return: 0
  */
 int main(int argc, char *argv[])
 {
-	int n1 = 0;
-	int n2 = 0;
 	int r;
 
 	if (argc != 3)
@@ -23,9 +20,7 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
-		n1 += atoi(argv[1]);
-		n2 += atoi(argv[2]);
-		r = n1 * n2;
+		r = atoi(argv[1]) * atoi(argv[2]);
 		printf("%d\n", r);
 		return (0);
 	}
