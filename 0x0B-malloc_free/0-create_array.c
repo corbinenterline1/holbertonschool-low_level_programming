@@ -22,6 +22,8 @@ char *create_array(unsigned int size, char c)
 	else
 	{
 		a = malloc(sizeof(*a) * size);
+		if (a == NULL)
+			return (NULL);
 		for (i = 0; i < size; i++)
 			a[i] = c;
 		return (a);
