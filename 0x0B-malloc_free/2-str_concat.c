@@ -41,17 +41,16 @@ char *str_concat(char *s1, char *s2)
 		s1 = "";
 	else if (s2 == NULL)
 		s2 = "";
-	t = _strlen(s1) + _strlen(s2);
-	cpy = malloc(t + 1);
+	t = (_strlen(s1) + _strlen(s2) + 1);
+	cpy = malloc(t);
 	if (cpy == NULL)
 		return (NULL);
 	for (a = 0; s1[a] != '\0'; a++)
 		cpy[a] = s1[a];
-	for (b = 0; s2[b] != '\0'; b++)
+	for (b = 0; a != t && s2[b] != '\0'; b++, a++)
 	{
 		cpy[a] = s2[b];
-		a++;
 	}
-	cpy[a + b] = s2[b];
+	cpy[a] = '\0';
 	return (cpy);
 }
