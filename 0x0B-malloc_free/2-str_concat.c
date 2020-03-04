@@ -43,7 +43,7 @@ char *str_concat(char *s1, char *s2)
 	else if (s2 == NULL)
 		s2 = "";
 	t = (_strlen(s1) + _strlen(s2) + 1);
-	cpy = malloc(t);
+	cpy = malloc(t + 1);
 	if (cpy == NULL)
 		return (NULL);
 	c = 0;
