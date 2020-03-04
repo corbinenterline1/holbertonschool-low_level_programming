@@ -38,9 +38,14 @@ char *str_concat(char *s1, char *s2)
 	int b;
 
 	if (s1 == NULL)
+	{
+		s1 = malloc(1);
 		s1 = "";
-	else if (s2 == NULL)
-		s2 = "";
+	}
+	if (s2 == NULL)
+	{
+		s2 = malloc(1);
+		s2 = '\0';
 	t = (_strlen(s1) + _strlen(s2) + 1);
 	cpy = malloc(t);
 	if (cpy == NULL)
@@ -51,6 +56,6 @@ char *str_concat(char *s1, char *s2)
 	{
 		cpy[a] = s2[b];
 	}
-	cpy [a] = '\0';
+	cpy[a] = '\0';
 	return (cpy);
 }
