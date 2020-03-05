@@ -49,8 +49,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	t = _strlen(s1);
 	if ((int)n > _strlen(s2))
 		n = _strlen(s2);
-	t += n + 1;
-	p = malloc(t + 1);
+	t += n;
+	p = malloc(t);
 	if (p == NULL)
 		return (NULL);
 	for (a = 0; s1[a] != '\0'; a++)
