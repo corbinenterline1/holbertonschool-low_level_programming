@@ -47,7 +47,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		*s1 = '\0';
 	}
 	t = _strlen(s1);
-	if ((int)n >= _strlen(s2))
+	if ((int)n > _strlen(s2))
 		n = _strlen(s2);
 	t += n + 1;
 	p = malloc(t);
