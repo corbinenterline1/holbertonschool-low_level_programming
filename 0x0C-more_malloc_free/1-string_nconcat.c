@@ -1,6 +1,6 @@
 #include "holberton.h"
-#include <stdio.h>
 #include <stdlib.h>
+
 /**
  * _strlen - gets length of string
  * @s: input string
@@ -18,6 +18,7 @@ int _strlen(char *s)
 	}
 	return (l);
 }
+
 /**
  * *string_nconcat - concatenates two strings
  * @s1: string to be written to
