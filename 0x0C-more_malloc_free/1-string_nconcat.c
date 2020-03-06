@@ -39,7 +39,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s1 = "";
 	if (s2 == NULL)
 		malloc(1);
-		s1 = '\0';
+		s2 = '\0';
 	t2 = _strlen(s2);
 	if (n >= t2)
 	{
