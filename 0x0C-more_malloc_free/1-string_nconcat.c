@@ -38,8 +38,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
-		malloc(1);
-		s2 = '\0';
+		s2 = "";
 	t2 = _strlen(s2);
 	if (n >= t2)
 	{
