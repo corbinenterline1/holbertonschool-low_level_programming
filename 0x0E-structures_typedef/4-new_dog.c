@@ -33,9 +33,12 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	cpyn = malloc(sizeof(char) * (ln + 1));
 	if (cpyn == NULL)
+		free(new_dog);
 		return (NULL);
 	cpyo = malloc(sizeof(char) * (lo + 1));
 	if (cpyo == NULL)
+		free(cpyn);
+		free(new_dog);
 		return (NULL);
 	for (a = 0; name[a] != '\0'; a++)
 		cpyn[a] = name[a];
