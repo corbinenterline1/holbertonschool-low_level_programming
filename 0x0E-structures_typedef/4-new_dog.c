@@ -3,83 +3,48 @@
 #include <stdlib.h>
 
 /**
- * *_memcpy - Copies 'n' bytes from memory area 'src' to memory area 'dest'
- * @dest: destination memory area
- * @src: source memory area
- * @n: number of bytes to copy from src to dest
- * Set a pointer 'd'  to dest memory area
- * Set a pointer 's' to src memory area
- * While n is greater than 0;
- * set s into d, increment both, decrement n
- * Return: pointer to dest
- */
-char *_memcpy(char *dest, char *src, unsigned int n)
-{
-	char *d = dest;
-	char *s = src;
-
-	while (n > 0)
-	{
-		*d++ = *s++;
-		n--;
-	}
-	return (dest);
-}
-/**
- * *_strdup - returns a pointer to a new string that's duplicated from str
- * @str: input string
- * if str isn't null, get length of string with l
- * Then allocate array of cpy to `l` elements
- * if the copy is empty, or null, return null, else run memcpy
- * Return: cpy if successfull, NULL otherwise
- */
-char *_strdup(char *str)
-{
-	char *cpy;
-	int l;
-
-	if (str == NULL)
-		return (NULL);
-	{
-		for (l = 0; str[l] != '\0'; l++)
-		;
-		l++;
-		cpy = malloc(l * sizeof(char));
-		if (cpy == NULL || cpy == 0)
-			return (NULL);
-		else if (cpy)
-			_memcpy(cpy, str, l);
-		return (cpy);
-	}
-}
-/**
- * new_dog - creates a new struct dog
+ * *new_dog - creates a new dog struct
  * @name: name of dog
  * @age: age of dog
  * @owner: owner of dog
- * allocate memory for new struct dog
- * typical memory checks throughout after malloc
- * strdup name onto cpyn (copy name)
- * stdup owner onto cpyo (owner name)
- * then set struct elements
- * Return: new dog struct
+ * check if any input strings are NULL
+ * get length of name (ln) and owner (lo)
+ * malloc the new struct dog new_dog, check if malloc failed
+ * malloc the copy of name (cpyn), check if malloc failed
+ * malloc the copy of owner (cpyo), check if malloc failed
+ * copy name to cpyn, add terminator. Do same for owner
+ * Then, set elements of struct dog new_dog
+ * Return: new_dog struct dog
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *new_dog;
+	int a, ln, lo;
 	char *cpyn, *cpyo;
-	
-	if (name == NULL || owner || NULL)
+
+	if (name == NULL || owner == NULL)
 		return (NULL);
+	for (ln = 0; name[ln] != '\0'; ln++)
+	;
+	ln++;
+	for (lo = 0; owner[lo] != '\0'; lo++)
+	;
+	lo++;
 	new_dog = malloc(sizeof(dog_t));
 	if (new_dog == NULL)
 		return (NULL);
-	cpyn = _strdup(name);
+	cpyn = malloc(sizeof(char) * ln);
 	if (cpyn == NULL)
 		return (NULL);
-	cpyo = _strdup(owner);
+	cpyo = malloc(sizeof(char) * lo);
 	if (cpyo == NULL)
 		return (NULL);
+	for (a = 0; name[a] != '\0'; a++)
+		cpyn[a] = name[a];
+	cpyn[a] = '\0';
+	for (a = 0; owner[a] != '\0'; a++)
+		cpyo[a] = owner[a];
+	cpyo[a] = '\0';
 	new_dog->name = cpyn;
 	new_dog->age = age;
 	new_dog->owner = cpyo;
