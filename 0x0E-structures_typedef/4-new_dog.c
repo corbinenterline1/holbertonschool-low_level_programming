@@ -26,17 +26,15 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	for (ln = 0; name[ln] != '\0'; ln++)
 	;
-	ln++;
 	for (lo = 0; owner[lo] != '\0'; lo++)
 	;
-	lo++;
 	new_dog = malloc(sizeof(dog_t));
 	if (new_dog == NULL)
 		return (NULL);
-	cpyn = malloc(sizeof(char) * ln);
+	cpyn = malloc(sizeof(char) * (ln + 1));
 	if (cpyn == NULL)
 		return (NULL);
-	cpyo = malloc(sizeof(char) * lo);
+	cpyo = malloc(sizeof(char) * (lo + 1));
 	if (cpyo == NULL)
 		return (NULL);
 	for (a = 0; name[a] != '\0'; a++)
