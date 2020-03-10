@@ -3,6 +3,38 @@
 #include <stdlib.h>
 
 /**
+ * *_custstrdup - refined version of strdup (my old one sucked)
+ * @str: input pointer to string
+ * get length of string with first for
+ * malloc string + 1 (for terminator)
+ * all throughout, check for NULL at appropriate time
+ * second for loop copies string to new cpy (copy)
+ * Return: cpy
+ */
+char *_custstrdup(char *str)
+{
+	int a, b;
+	char *cpy;
+
+	a = b = 0;
+	if (str == 0)
+		return (NULL);
+	for (; str[a] != '\0'; a++, b++;)
+	;
+	cpy = malloc(sizeof(char) * (b + 1));
+	if (cpy == NULL)
+	{
+		free(cpy);
+		return (NULL);
+	}
+	for (a = 0; str[a] != '\0'; a++)
+		cpy[a] = str[a];
+	cpy[a] = '\0';
+	return (cpy);
+}
+
+
+/**
  * *new_dog - creates a new dog struct
  * @name: name of dog
  * @age: age of dog
@@ -22,27 +54,24 @@ dog_t *new_dog(char *name, float age, char *owner)
 	int a, ln, lo;
 	char *cpyn, *cpyo;
 
-	for (ln = 0; name[ln] != '\0'; ln++)
-	;
-	for (lo = 0; owner[lo] != '\0'; lo++)
-	;
+	if (name == NULL || owner == NULL)
+		return (NULL);
 	new_dog = malloc(sizeof(dog_t));
 	if (new_dog == NULL)
 		return (NULL);
-	cpyn = malloc(sizeof(char) * (ln + 1));
-	if (cpyn == NULL)
+	new_dog->name = _strdup(name);
+	if (new_dog->name == NULL)
+	{
+		free(new_dog);
 		return (NULL);
-	cpyo = malloc(sizeof(char) * (lo + 1));
-	if (cpyo == NULL)
-		return (NULL);
-	for (a = 0; name[a] != '\0'; a++)
-		cpyn[a] = name[a];
-	cpyn[a] = '\0';
-	for (a = 0; owner[a] != '\0'; a++)
-		cpyo[a] = owner[a];
-	cpyo[a] = '\0';
-	new_dog->name = cpyn;
+	}
 	new_dog->age = age;
-	new_dog->owner = cpyo;
+	new_dog->owner = _strdup(owner);
+	if (new_dog->owner == NULL)
+	{
+		free(new_dog->name);
+		free(new_dog);
+		return (NULL);
+	}
 	return (new_dog);
 }
