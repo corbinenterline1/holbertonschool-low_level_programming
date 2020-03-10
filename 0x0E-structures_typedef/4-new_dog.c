@@ -19,7 +19,7 @@ char *_custstrdup(char *str)
 	a = b = 0;
 	if (str == 0)
 		return (NULL);
-	for (; str[a] != '\0'; a++, b++;)
+	for (; str[a] != '\0'; a++, b++)
 	;
 	cpy = malloc(sizeof(char) * (b + 1));
 	if (cpy == NULL)
@@ -51,22 +51,20 @@ char *_custstrdup(char *str)
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *new_dog;
-	int a, ln, lo;
-	char *cpyn, *cpyo;
 
 	if (name == NULL || owner == NULL)
 		return (NULL);
 	new_dog = malloc(sizeof(dog_t));
 	if (new_dog == NULL)
 		return (NULL);
-	new_dog->name = _strdup(name);
+	new_dog->name = _custstrdup(name);
 	if (new_dog->name == NULL)
 	{
 		free(new_dog);
 		return (NULL);
 	}
 	new_dog->age = age;
-	new_dog->owner = _strdup(owner);
+	new_dog->owner = _custstrdup(owner);
 	if (new_dog->owner == NULL)
 	{
 		free(new_dog->name);
