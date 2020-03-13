@@ -1,23 +1,13 @@
- # Project # - C - Project Name
+ # 0x0E - C - Structures, typedef
 Task # | Short Description
 -------|------------
-[Task 0]() | 
-[Task 1]() | 
-[Task 2]() | 
-[Task 3]() | 
-[Task 4]() | 
-[Task 5]() | 
-[Task 6]() | 
-[Task 7]() | 
-[Task 8]() | 
-[Task 9]() | 
-[Task 10]() | 
-[Task 11]() | 
-[Task 12]() | 
+[Task 0](dog.h) | Define a new type `struct dog` with `name` (char \*), `age`(float), and `owner` (char \*).
+[Task 1](1-init_dog.c) | Initializes a variable of type `struct dog`.
+[Task 2](2-print_dog.c) | Prints a `struct dog`.
+[Task 3](dog.h) | Define a new type `dog\_t` as a new name for the type `struct dog`.
+[Task 4](4-new_dog.c) | Creates a new dog.
+[Task 5](5-free_dog.c) | Function that frees dogs.
 
  ## Lessons Learned
-* 
-* 
-* 
-* 
-* 
+* What are structures, when, why, and how to use them
+* How to use `typedef`
