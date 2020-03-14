@@ -22,6 +22,8 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	int b;
 
 	va_start(vat, n);
+	if (n == 0)
+		return;
 	if (separator != NULL)
 	{
 		for (a = 1; a < n; a++)
