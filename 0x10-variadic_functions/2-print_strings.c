@@ -22,10 +22,12 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	unsigned int a;
 	char *ptr;
 
-	va_start(vat, n);
 	if (n < 1)
+	{
 		printf("\n");
 		return;
+	}
+	va_start(vat, n);
 	if (separator != NULL)
 	{
 		for (a = 1; a < n; a++)
