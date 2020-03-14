@@ -23,7 +23,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	char *ptr;
 
 	va_start(vat, n);
-	if (n == 0)
+	if (n < 1)
 		return;
 	if (separator != NULL)
 	{
