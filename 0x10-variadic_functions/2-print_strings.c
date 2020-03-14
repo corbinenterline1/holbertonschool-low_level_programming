@@ -24,6 +24,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 	va_start(vat, n);
 	if (n < 1)
+		printf("\n");
 		return;
 	if (separator != NULL)
 	{
