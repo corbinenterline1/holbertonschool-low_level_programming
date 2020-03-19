@@ -12,9 +12,9 @@
  */
 typedef struct list_s
 {
-    char *str;
-    unsigned int len;
-    struct list_s *next;
+	char *str;
+	unsigned int len;
+	struct list_s *next;
 } list_t;
 
 size_t print_list(const list_t *h);
@@ -27,6 +27,6 @@ list_t *add_node_end(list_t **head, const char *str);
 
 void free_list(list_t *head);
 
-int _strlen (char *c);
+int _strlen(char *c);
 
 #endif
