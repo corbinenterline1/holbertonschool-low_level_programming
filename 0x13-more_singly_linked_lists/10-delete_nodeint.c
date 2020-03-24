@@ -26,7 +26,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	}
 	while (cpy)
 	{
-		if (c == index - 1)
+		if (c == index)
 		{
 			tmp = cpy->next;
 			cpy->next = tmp->next;
