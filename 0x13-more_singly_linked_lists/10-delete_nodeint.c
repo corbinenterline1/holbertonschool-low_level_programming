@@ -11,28 +11,30 @@
  */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
-	listint_t *cpy, *prev;
+	listint_t *cpy, *tmp;
 	unsigned int c = 0;
 
-	if (*head == NULL || head == NULL)/* if list is empty */
+	if (*head == NULL)/* if list is empty */
 		return (-1);
 	cpy = *head;
 	if (index == 0)
 	{/* deleting at head */
-		*head = (*head)->next;
+		tmp = cpy->next;
 		free(cpy);
+		*head = tmp;
 		return (1);
 	}
 	while (cpy)
 	{
 		if (c == index - 1)
 		{
-			prev->next = cpy->next;
-			free(cpy);
+			tmp = cpy->next;
+			cpy->next = tmp->next;
+			free(tmp);
 			return (1);
 		}
-		prev = cpy;
-		cpy = cpy->next;
+		if (cpy->next != NULL)
+			cpy = cpy->next;
 		c++;
 	}
 	return (-1);
