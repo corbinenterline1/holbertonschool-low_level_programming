@@ -7,7 +7,7 @@
  * @n: data for new node
  * Return: pointer to new node
  */
-listint_t *insert_nodeint_at_index(instint_t **head, unsigned int idx, int n)
+listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 	unsigned int i;
 	listint_t *new;
@@ -19,7 +19,7 @@ listint_t *insert_nodeint_at_index(instint_t **head, unsigned int idx, int n)
 	p = *head;
 
 	if (new == NULL)
-		return (NULL)
+		return (NULL);
 	new->n = n;
 	for (i = 0; p != NULL && i + 1 < idx; i++)
 		p = p->next;
@@ -34,8 +34,4 @@ listint_t *insert_nodeint_at_index(instint_t **head, unsigned int idx, int n)
 		p->next = new;
 	}
 	return (new);
-}
-
-
-
 }
