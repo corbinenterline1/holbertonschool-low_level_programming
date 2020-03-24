@@ -1,12 +1,8 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "lists.h"
-#include <string.h>
 
 /**
- * 
- *
- * 
+ * free_listint2 - Frees a listint_t list & sets head to NULL
+ * @head: input pointer to pointer to head node of list
  */
 void free_listint2(listint_t **head)
 {
