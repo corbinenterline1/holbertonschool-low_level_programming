@@ -14,7 +14,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	listint_t *cpy, *tmp;
 	unsigned int c = 0;
 
-	if (*head == NULL || head == NULL)/* if list is empty */
+	if (head == NULL)/* if list is empty */
 		return (-1);
 	cpy = *head;
 	if (index == 0)
@@ -28,7 +28,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	{
 		if (cpy == NULL)
 			return (-1);
-		if (c == index)
+		if (c == index - 1)
 		{
 			tmp = cpy->next;
 			cpy->next = tmp->next;
