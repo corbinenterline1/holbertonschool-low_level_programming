@@ -42,8 +42,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 			free(tmp);
 			return (1);
 		}
-		if (cpy->next != NULL)
-			cpy = cpy->next;
+		cpy = cpy->next;
 		c++;
 	}
 	return (-1);
