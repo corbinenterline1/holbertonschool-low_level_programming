@@ -7,40 +7,17 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int k, i, l;
-	int c;
+	unsigned int sum = 0;
+	int bit, i;
 
-	l = _strlen(b);
-	k = 1; /* used for base-q expansion */
-	i = 0;
-	if (b == NULL)
-		return (0);
-	for (c = l - 1; c >= 0; c--)
+	for (i = 0; b[i]; i++)
 	{
-		if (b[c] != '0' && b[c] != '1')
+		bit = b[i] - '0';
+		if (bit != 0 && bit != 1)
 			return (0);
-		if (b[c] == '1')
-			i += k;
-		k *= 2;
+		sum <<= 1;
+		if (bit & 1)
+			sum |= 1;
 	}
-	return (i);
-}
-
-/**
- * _strlen - Returns length of string
- * @s: char string input
- * while s doesn't equal 0 (ascii value of breakline), increase length count
- * and count on string, equally.
- * Return: l, aka length of string
- */
-unsigned int _strlen(const char *s)
-{
-	int l = 0;
-
-	while (*s != 0)
-	{
-		s++;
-		l++;
-	}
-	return (l);
+	return (sum);
 }
