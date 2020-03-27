@@ -10,6 +10,8 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int sum = 0;
 	int bit, i;
 
+	if (b == NULL)
+		return (0);
 	for (i = 0; b[i]; i++)
 	{
 		bit = b[i] - '0';
