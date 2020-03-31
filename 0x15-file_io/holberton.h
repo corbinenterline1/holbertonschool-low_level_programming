@@ -17,4 +17,12 @@ int append_text_to_file(const char *filename, char *text_content);
 
 int _strlen(char *s);
 
+void precheckargc(int argc);
+
+void precheckfrom(char *s);
+
+void precheckto(char *s);
+
+void fdcheck(int wr, char *s);
+
 #endif
