@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 	while (fd != 0)
 	{
 		wr = write(to, buf, fd);
-		if (wr == -1)
+		if (wr == -1 || wr != fd)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", argv[2]);
 			exit(99);
