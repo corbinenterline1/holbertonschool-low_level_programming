@@ -81,7 +81,6 @@ void precheckto(char *s)
 /**
  * fdcheck - checks if file descriptor can be closed
  * @wr: return code from close
- * @s: filename
  */
 void fdcheck(int wr)
 {
