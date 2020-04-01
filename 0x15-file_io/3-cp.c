@@ -10,7 +10,7 @@
 int main(int argc, char *argv[])
 {
 	int fd, from, to, wr;
-	char *buf[1024];
+	char buf[1024];
 
 	precheckargc(argc);
 	precheckfrom(argv[1]);
