@@ -19,24 +19,18 @@ int main(int argc, char *argv[])
 	to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, RWRWR);
 	fd = read(from, buf, 1024);
 	if (fd == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
-	}
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n",
+			argv[1]), exit(98);
 	while (fd != 0)
 	{
 		wr = write(to, buf, fd);
-		if (wr == -1 || wr != fd)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", argv[2]);
-			exit(99);
-		}
+		if (wr == -1 || fd != wr)
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n",
+				argv[2]), exit(99);
 		fd = read(from, buf, 1024);
 		if (fd == -1)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-			exit(98);
-		}
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n",
+				argv[1]), exit(98);
 	}
 	wr = close(from);
 	fdcheck(wr, argv[1]);
@@ -79,7 +73,7 @@ void precheckto(char *s)
 {
 	if (s == NULL)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", s);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", s);
 		exit(99);
 	}
 }
@@ -93,7 +87,7 @@ void fdcheck(int wr, char *s)
 {
 	if (wr == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", s);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", wr);
 		exit(100);
 	}
 }
