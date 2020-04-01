@@ -33,9 +33,9 @@ int main(int argc, char *argv[])
 				argv[1]), exit(98);
 	}
 	wr = close(from);
-	fdcheck(wr, argv[1]);
+	fdcheck(wr);
 	wr = close(to);
-	fdcheck(wr, argv[2]);
+	fdcheck(wr);
 	return (0);
 }
 
@@ -83,7 +83,7 @@ void precheckto(char *s)
  * @wr: return code from close
  * @s: filename
  */
-void fdcheck(int wr, char *s)
+void fdcheck(int wr)
 {
 	if (wr == -1)
 	{

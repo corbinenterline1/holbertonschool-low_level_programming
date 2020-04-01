@@ -23,6 +23,6 @@ void precheckfrom(char *s);
 
 void precheckto(char *s);
 
-void fdcheck(int wr, char *s);
+void fdcheck(int wr);
 
 #endif
