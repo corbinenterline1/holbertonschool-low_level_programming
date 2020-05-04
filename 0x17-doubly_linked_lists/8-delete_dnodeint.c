@@ -1,8 +1,10 @@
 #include "lists.h"
 
 /**
- *
- *
+ * delete_dnodeint_at_index - deletes node at index
+ * @head: double pointer to head
+ * @index: from 0, node to remove
+ * Return: 1 if successful, -1 otherwise
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
@@ -32,7 +34,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 			cpy->next->prev = cpy;
 			cpy->next = tmp->next;
 			free(tmp);
-			return(1);
+			return (1);
 		}
 		cpy = cpy->next;
 		c++;
