@@ -13,14 +13,11 @@ hash_table_t *hash_table_create(unsigned long int size)
 	if (nt == NULL)/** malloc check */
 		return (NULL);
 	nt->size = size;/** assign size value */
-	if (size != 0)
-	{
-		nt->array = malloc((sizeof(hash_table_t)) * size);
-		if (nt->array == NULL)
-		{/** malloc check, free table if array failed */
-			free(nt);
-			return (NULL);
-		}
+	nt->array = malloc((sizeof(hash_table_t)) * size);
+	if (nt->array == NULL)
+	{/** malloc check, free table if array failed */
+		free(nt);
+		return (NULL);
 	}
 	for (; c < size; c++)/** initialize indexes of array to NULL */
 		nt->array[c] = NULL;
