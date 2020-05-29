@@ -18,11 +18,8 @@ hash_table_t *hash_table_create(unsigned long int size)
 		return (NULL);
 	nt->size = size;/** assign size value */
 	nt->array = malloc((sizeof(hash_table_t)) * size);
-	if (nt->array == NULL)
-	{/** malloc check, free table if array failed */
-		free(nt);
+	if (nt->array == NULL)/**Don't free table??!? */
 		return (NULL);
-	}
 	for (; c < size; c++)/** initialize indexes of array to NULL */
 		nt->array[c] = NULL;
 	return (nt);
