@@ -1,36 +1,43 @@
 #include "hash_tables.h"
 
 /**
- *
- *
- *
+ * hash_table_set - Adds element to hash table
+ * @ht: hash table to add or update key/value to
+ * @key: key. cannot be empty
+ * @value: value associated with key. Can be empty.
+ * Return: 1 if succeeded, 0 otherwise
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	char *nv = NULL;
-	hash_node_t *node = NULL, *old = NULL;
-	unsigned long int ki, c = 0;/* (k)ey (i)ndex result (c)ounter */
+	hash_node_t *node = NULL, *sniffy = NULL;
+	unsigned long int ki;/* (k)ey (i)ndex result */
 
 	if (key == NULL || ht == NULL)/* no empty table or key */
 		return (0);
-	ki = key_index((const unsigned char *)key, ht->size);
-	if (nv != NULL)/* value must be duplicated, it can be empty */
-		nv = strdup(value);
 	node = malloc(sizeof(hash_node_t));/* malloc node */
 	if (node == NULL)/* malloc check */
 		return (0);
-	node->key = (char *)key;
-	node->value = nv;
-	if (ht->array[ki] == NULL)
+	node->key = strdup(key);
+	if (node->key == NULL)
 	{
-		ht->array[ki] = node;
-		node->next = NULL;
+		free(node);
+		return (0);
 	}
+	node->value = strdup(value);
+	if (node->value == NULL)
+	{
+		free(node->key);
+		free(node);
+		return (0);
+	}
+	ki = key_index((const unsigned char *)key, ht->size);
+	sniffy = ht->array[ki];
+	if (sniffy)
+		node->next = sniffy;
 	else
 	{
-		old = ht->array[ki];
-		node->next = old;
-		old->next = NULL;
+		node->next = NULL;
+		sniffy = node;
 	}
 	return (1);
 }
