@@ -9,7 +9,7 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {/* node is new node, sniffy is for searching(sniffing) stuff */
-	hash_node_t *old = NULL, *node = NULL, *sniffy = NULL;
+	hash_node_t *node = NULL, *sniffy = NULL;
 	unsigned long int ki;
 
 	if (key == NULL || ht == NULL)/* no empty table or key */
@@ -25,8 +25,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		if (sniffy)
 			free(sniffy->key), free(sniffy->value), free(sniffy);
-		ht->array[ki] = new;
-		new->next = NULL;
+		ht->array[ki] = node;
+		node->next = NULL;
 	}
 	else
 	{
